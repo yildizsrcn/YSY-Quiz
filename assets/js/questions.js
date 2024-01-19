@@ -1,15 +1,15 @@
 const questions = [
     {id: 1,
       question: "What country has the highest life expectancy?",
-      answers: [["A", "France"], ["B", "United Kingdom"], ["C", "Hong Kong"], ["D", "U.S.A."]],
-      correctAnswer: "C"},
+      answers: ["France","United Kingdom","Hong Kong", "U.S.A."],
+      correctAnswer: "Hong Kong"},
     {id: 2,
       question: "What year was the United Nations established?",
-      answers: [["A", "1945"], ["B", "1947"], ["C", "1943"], ["D", "1949"]],
-      correctAnswer: "A"},
+      answers: ["1945","1947","1943","1949"],
+      correctAnswer: "1945"},
     {
       id: 3,
       question: "What country has won the most World Cups?",
-      answers: [["A", "Argentina"], ["B", "France"], ["C", "Brazil"], ["D", "England"]],
-      correctAnswer: "C"
+      answers: ["Argentina","France","Brazil","England"],
+      correctAnswer: "Brazil"
     }];
