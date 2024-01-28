@@ -15,8 +15,9 @@ var questionsElement= document.querySelector("#questions")
 var questionTitle=document.querySelector("#question-title")
 var choicesElement=document.querySelector("#choices")
 var startScreen= document.querySelector("#start-screen")
+var score=0
 console.log(startButton)
-var timerCount= 100
+var timerCount= 10
 function startTimer() {
     timer = setInterval(function() {
       timerCount--;
@@ -41,11 +42,27 @@ for(var i=0; i<buttonChoices.length;i++){
 }
 choicesElement.addEventListener("click",function(event){
 event.preventDefault()
-if(event.target.matches("button"))
+if(event.target.matches("button")){
+checkQuestion(event.target.textContent)
+}
+
 })
+function checkQuestion(userClick) {
+var correctAnswer=questions[questionIndex].correctAnswer
+if(userClick===correctAnswer){
+score+=10
+}else{
+  timerCount-=10
+}
 
+questionIndex++
+if(questions.length>questionIndex){
+  displayQuestions()
 
-
+}else{
+  clearInterval()
+}
+}
 
   startButton.addEventListener("click",function(){
     console.log("click")
