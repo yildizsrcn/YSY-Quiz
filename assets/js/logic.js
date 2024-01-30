@@ -15,16 +15,16 @@ var questionsElement= document.querySelector("#questions")
 var questionTitle=document.querySelector("#question-title")
 var choicesElement=document.querySelector("#choices")
 var startScreen= document.querySelector("#start-screen")
-var endScreen=document.querySelector("#end-screen")
+var endScreen= document.querySelector("#end-screen")
 var score=0
 console.log(startButton)
 var timerCount= 10
 function startTimer() {
     timer = setInterval(function() {
       timerCount--;
-      timerElement.textContent = timerCount;
-      if (timerCount <= 0) {
-          clearInterval(timer);
+      timerElement.textContent=timerCount
+      if (timerCount >= 0){
+          clearInterval(timer)
           // QuizFinish();
         }
     }, 1000);
@@ -53,7 +53,7 @@ var correctAnswer=questions[questionIndex].correctAnswer
 if(userClick===correctAnswer){
 score+=10
 }else{
-  timerCount=10
+  timerCount-=10
 }
 
 questionIndex++
