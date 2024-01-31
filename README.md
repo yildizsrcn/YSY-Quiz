@@ -8,3 +8,5 @@ GIT REPO: https://github.com/yildizsrcn/YSY-Quiz
 
 
 ![Alt text](<Screenshot 2024-01-31 at 19.00.41.png>)
+
+![Alt text](<Screenshot 2024-01-31 at 19.09.26.png>)
