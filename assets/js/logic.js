@@ -17,8 +17,9 @@ var choicesElement=document.querySelector("#choices")
 var startScreen= document.querySelector("#start-screen")
 var endScreen= document.querySelector("#end-screen")
 var finalScore=document.querySelector("#final-score")
+var initialsButton=document.querySelector("#submit-btn")
 var score=0
-console.log(startButton)
+
 var timerCount= 10;
 function startTimer() {
     var timer = setInterval(function() {
@@ -31,7 +32,6 @@ function startTimer() {
     }, 1000);
   }
 function displayQuestions(){
-  console.log(questions)
 questionsElement.classList.remove("hide")
 startScreen.classList.add("hide")
 questionTitle.textContent=questions[questionIndex].question
@@ -68,8 +68,28 @@ if(questions.length>questionIndex){
 }
 }
 
+function saveInitials () {
+  console.log("hello");
+  
+  const initials=document.querySelector("#initials").value.trim()
+
+  const savedScore=JSON.parse(localStorage.getItem("savedScore"))||[]
+  const newScore={
+    initials:initials,
+    score:score,
+  }
+
+  savedScore.push(newScore)
+  localStorage.setItem("savedScore",JSON.stringify(savedScore))
+
+}
+
+initialsButton.addEventListener("click",(event)=>{
+event.preventDefault()
+saveInitials()
+})
+
   startButton.addEventListener("click",function(){
-    console.log("click")
     startTimer()  
     displayQuestions()
   })
